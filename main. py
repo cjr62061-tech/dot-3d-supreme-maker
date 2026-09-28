@@ -1,0 +1,22 @@
+# Secure Dot-3D App with Login + Guest + Hidden Help
+import base64
+
+# Tera number hide hai, decode hoke hi dikhega
+# +91 6265910357 ko hide kar diya hai
+HELP_CONTACT = base64.b64decode("KzkxIDYyNjU5MTAzNTc=").decode()
+
+def login_with_gmail():
+    print("Gmail Login - Firebase se connect hoga")
+
+def login_with_number(number):
+    print(f"OTP bhejo {number} par")
+
+def guest_mode():
+    print("Guest Mode: 2 baar tak 3D bana sakte ho")
+
+def forgot_password(email):
+    print(f"Reset link bheja {email} par")
+
+def help_button():
+    # Number direct code me nahi dikhega
+    return f"https://wa.me/{HELP_CONTACT.replace(' ', '').replace('+','')}"
