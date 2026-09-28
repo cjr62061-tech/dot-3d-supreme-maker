@@ -1,5 +1,4 @@
-opencv-python
-numpy
-open3d
 kivy
 kivymd
+opencv-python
+numpy
