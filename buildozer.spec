@@ -17,3 +17,4 @@ orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,CAMERA
 android.api = 33
+icon.filename = %(source.dir)s/IMG-20260929-WA4255.jpg
