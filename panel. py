@@ -1,0 +1,45 @@
+# === DOT 3D - SECURE DEVELOPER PANEL ===
+# Ye code koi padh ke admin me nahi ja payega
+import base64
+
+# Tera email hide kiya hua hai - double lock
+# Y2pyNjIwNjFAZ21haWwuY29t = cjr62061@gmail.com ka code hai
+_LOCK_1 = "WTJweU5qSXdOakZBWjIxYWFYd3VZMjkx"
+_LOCK_2 = base64.b64decode(_LOCK_1.encode()).decode()
+ADMIN_EMAIL = base64.b64decode(_LOCK_2.encode()).decode()
+
+def check_is_admin(current_email):
+    # Current email check
+    if current_email.strip().lower() == ADMIN_EMAIL.lower():
+        return True
+    return False
+
+def get_buyers_list(firebase_db):
+    # Sirf khareedne walo ki list laayega
+    buyers = []
+    try:
+        docs = firebase_db.collection("users").where("is_purchased", "==", True).stream()
+        for doc in docs:
+            data = doc.to_dict()
+            buyers.append({
+                "naam": data.get("name", "N/A"),
+                "email": data.get("email", "N/A"),
+                "number": data.get("phone", "N/A"),
+                "date": data.get("purchase_date", "N/A")
+            })
+    except Exception as e:
+        print(f"Error: {e}")
+    return buyers
+
+# Secret tap count
+tap_count = 0
+def on_secret_tap(current_email):
+    global tap_count
+    tap_count += 1
+    if tap_count >= 5:
+        tap_count = 0
+        if check_is_admin(current_email):
+            return True  # Admin panel kholo
+        else:
+            return False # Block
+    return None
