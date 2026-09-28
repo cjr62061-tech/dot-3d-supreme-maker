@@ -22,3 +22,11 @@ def forgot_password(email):
 def help_button():
     # Number direct code me nahi dikhega
     return f"https://wa.me/{HELP_CONTACT.replace(' ', '').replace('+','')}"
+
+def logo_clicked():
+    result = on_secret_tap(current_user_email)
+    if result == True:
+        buyers = get_buyers_list(db)
+        show_buyers_screen(buyers)
+    elif result == False:
+        show_toast("Access Denied")
