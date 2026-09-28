@@ -1,3 +1,5 @@
+
+from dev_panel import on_secret_tap, get_buyers_list
 # Secure Dot-3D App with Login + Guest + Hidden Help
 import base64
 
