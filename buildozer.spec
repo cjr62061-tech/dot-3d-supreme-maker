@@ -6,7 +6,7 @@ package.domain = com.dot3d.supreme
 source.dir =.
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
-requirements = python3,kivy,kivymd,opencv,numpy,pillow
+requirements = python3,kivy,kivymd,opencv-python,numpy
 
 [buildozer]
 log_level = 2
