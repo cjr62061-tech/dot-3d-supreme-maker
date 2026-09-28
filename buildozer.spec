@@ -17,4 +17,9 @@ orientation = portrait
 fullscreen = 0
 android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,CAMERA
 android.api = 33
-icon.filename = %(source.dir)s/IMG-20260929-WA4255.jpg
+android.minapi = 21
+android.ndk = 25b
+android.accept_sdk_license_agreements = True
+android.build_tools_version = 33.0.2
+icon.filename = %(source.dir)s/IMG-20260929-WA4255.jpgandroid.api = 33
+
